@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Minimalist Form component styles
+   ========================================================================== */
+
+/* sub-elements styles
+   ========================================================================== */
+
+.c-mini-form {
+  position: relative;
+  font-size: 1em;
+
+  .c-mini-form__input-wrap {
+    position: absolute;
+    background-color: lighten($secondary-light-color, 5%);
+    width: 18em;
+    height: 3.3em;
+    padding: 0;
+    opacity: 0.7;
+    pointer-events: none;
+    box-shadow: 0 0 0 3px rgb(255,255,255);
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+
+    &.c-mini-form--active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    &.c-mini-form--active > .c-mini-form__input-inner {
+      opacity: 1;
+    }
+  }
+
+  input:focus,
+  button:focus {
+    outline: none;
+  }
+}
+
+.c-mini-form__input-inner {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  .c-mini-form__input,
+  .c-mini-form__submit-btn {
+    height: 100%;
+    width: 14.8em;
+  }
+
+  .c-mini-form__input {
+    border: 1px solid darken($generic-gray-color, 2%);
+    border-right: none;
+    background-color: transparent;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+    color: $secondary-dark-color;
+    color: lighten($generic-black-color, 30%);
+  }
+
+  [class^='c-mini-form__btn--'] {
+    cursor: pointer;
+    height: 100%;
+    width: 3.3em;
+    color: $generic-white-color;
+    background-color: $primary-color;
+    border: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: lighten($primary-color, 8%);
+    }
+  }
+
+  .c-mini-form__submit-btn {
+    cursor: pointer;
+    border: none;
+    color: $generic-white-color;
+    background-color: $primary-dark-color;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: lighten($primary-dark-color, 8%);
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.3;
+
+  }
+  20% {
+    transform: perspective(500px) translateZ(20px);
+  }
+  80% {
+    opacity: 0.8;
+    transform: perspective(500px) translateZ(0px);
+  }
+  100% {
+    opacity: 1;
+    //transform: perspective(500px) translateZ(0px);
+  }
+}
+
+//@keyframes fadeOut {
+//  from {
+//    opacity: 1;
+//  }
+//  to {
+//    opacity: 0;
+//  }
+//}
+
+@keyframes moveToBack {
+  0% {
+    opacity: 1;
+    transform: perspective(500px) translateZ(20px);
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    //opacity: 0.5;
+    transform: perspective(500px) translateZ(0px);
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+//@keyframes top{ from, to{ z-index: 2; } }
+//
+//@keyframes moveout{
+//  0%{ transform:translateX(0px); }
+//  50%{ transform:translateX(-160px); }
+//  100%{
+//    transform: translateX(40px) translateY(-40px);
+//    z-index: 0;
+//  }
+//}
+//
+//@keyframes movein{
+//  0%{ transform:translateX(40px) translateY(-40px); }
+//  50%{ transform:translateX(160px); }
+//  100%{ transform:translateX(0px); }
+//}
+
+@keyframes backToFirst {
+  0% {
+
+  }
+}
+
+
+// FOR UI FRAMEWORK LAYOUT ONLY
+.o-grid__cell .c-mini-form {
+  height: 15em;
+}

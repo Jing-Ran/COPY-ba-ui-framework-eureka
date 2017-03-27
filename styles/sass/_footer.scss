@@ -1,0 +1,9 @@
+.eureka-footer{
+  background-color: $body-bg-color;
+  padding: 2em;
+  &__text{
+    text-align:center;
+    color: $generic-gray-color;
+    font-weight:bold;
+  }
+}

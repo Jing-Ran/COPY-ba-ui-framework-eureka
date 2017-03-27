@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eureka CSS UI Framework</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link rel="stylesheet" href="../styles/css/eureka.css">
+  <link rel="stylesheet" href="../prism/prism.css">
+</head>
+<body>
+
+<section class="website-components__component" id="minimalist-form">
+
+  <h3>Space-Saving-Minimalist Form</h3>
+  <!--<p>Intro</p>-->
+
+  <br>
+
+  <!-- component example grid container -->
+  <div class="o-grid o-grid--gutters o-medium-grid--full">
+    <div class="o-grid__cell">
+      <!-- component examples here -->
+      <form class="c-mini-form">
+
+        <!-- Last input -->
+        <div class="c-mini-form__input-wrap c-mini-form__submit">
+          <div class="c-mini-form__input-inner">
+            <button type="button" class="c-mini-form__btn--prev">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <input type="submit" name="submit" value="Submit" class="c-mini-form__submit-btn">
+          </div>
+        </div>
+
+        <!-- 3nd input -->
+        <div class="c-mini-form__input-wrap">
+          <div class="c-mini-form__input-inner">
+            <input type="text" name="last-nm" placeholder="City" class="c-mini-form__input">
+            <button type="button" class="c-mini-form__btn--next">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2nd input -->
+        <div class="c-mini-form__input-wrap">
+          <div class="c-mini-form__input-inner">
+            <input type="text" name="last-nm" placeholder="Last Name" class="c-mini-form__input">
+            <button type="button" class="c-mini-form__btn--next">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1st input -->
+        <div class="c-mini-form__input-wrap c-mini-form--active">
+          <div class="c-mini-form__input-inner">
+            <input type="text" name="first-nm" placeholder="First Name" class="c-mini-form__input">
+            <button type="button" class="c-mini-form__btn--next">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- code well markup -->
+  <!--<div class="o-grid o-grid&#45;&#45;gutters o-medium-grid&#45;&#45;full">-->
+    <!--<div class="o-grid__cell">-->
+      <!--<div class="c-collapse">-->
+        <!--<div class="c-collapse__controls-container&#45;&#45;justified-text">-->
+          <!--<i class="fa fa-code fa-lg" aria-hidden="true"></i>-->
+          <!--<a class="c-collapse__toggle">toggle markup</a>-->
+        <!--</div>-->
+        <!--<div class="c-collapse__content-container c-collapse__content-container&#45;&#45;dark">-->
+          <!--<div class="c-collapse__content&#45;&#45;prism-code-style">-->
+<!--<pre class="u-pre&#45;&#45;wrap"><code class="language-markup">-->
+<!--</code></pre>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!-- end codewell markup -->
+
+</section>
+
+<script src="../javascript/minimalist-form.js"></script>
+<script src="../javascript/collapse.js"></script>
+<script src="../prism/prism.js"></script>
+</body>
+</html>

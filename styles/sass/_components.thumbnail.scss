@@ -1,0 +1,17 @@
+.c-thumbnails-row--desc {
+  align-items: flex-end;
+}
+.c-thumbnail {
+  border: 0.5em solid $generic-gray-color;
+  border-radius: 1em;
+  box-shadow: inset 0px 1px 0px 7px darken($generic-gray-color, 30%);
+  margin: 1em .5em;
+  padding: 1em;
+  &__desc {
+    display: table;
+  }
+  &__p {
+    display: table-caption;
+    caption-side: bottom;
+  }
+}

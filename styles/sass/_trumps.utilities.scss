@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Utility classes for grid
+   ========================================================================== */
+
+/**
+	 * Align cells in grid
+	 *
+	 * Using the various align properties of Flexbox, we position all the cells within the grid.
+	 *
+	 */
+
+.u-grid--top {
+	align-items: flex-start;
+}
+.u-grid--bottom {
+	align-items: flex-end;
+}
+.u-grid--center {
+	align-items: center;
+}
+
+/**
+	 * Align cells in grid
+	 *
+	 * Using the various align-self properties of Flexbox, we position individual cells within the grid.
+	 *
+	 */
+
+.u-grid__cell--top {
+	align-self: flex-start;
+}
+.u-grid__cell--bottom {
+	align-self: flex-end;
+}
+.u-grid__cell--center {
+	align-self: center;
+}
+
+/* ==========================================================================
+   Utility classes for separator component
+   ========================================================================== */
+
+/**
+	 * Adjust colors for the separators
+	 *
+	 * Using the color variables defined
+	 *
+	 */
+
+.u-separator--primary{
+	border-color: $primary-color;
+}
+
+/* General utility styles */
+
+.u-text-center{  //center any text in a container
+	text-align:center!important;
+}
+
+
+.u-bg-primary{ //make container background the primary website color
+	background-color: $primary-color;
+}
+
+.u-bg-body{ //make container background the website body's color
+  background-color: $body-bg-color;
+}
+
+.u-bg-disabled{ //make container background the website body's color
+	background-color: $secondary-dark-color;
+}
+
+.pull-right{
+  float:right;
+}
+
+.color-primary{
+  color: $primary-color;
+}
+
+
