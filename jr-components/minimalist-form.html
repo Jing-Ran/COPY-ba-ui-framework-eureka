@@ -20,22 +20,13 @@
   <div class="o-grid o-grid--gutters o-medium-grid--full">
     <div class="o-grid__cell">
       <!-- component examples here -->
+
       <form class="c-mini-form">
 
-        <!-- Last input -->
-        <div class="c-mini-form__input-wrap c-mini-form__submit">
+        <!-- 1st input -->
+        <div class="c-mini-form__input-wrap is-active">
           <div class="c-mini-form__input-inner">
-            <button type="button" class="c-mini-form__btn--prev">
-              <i class="material-icons">arrow_back</i>
-            </button>
-            <input type="submit" name="submit" value="Submit" class="c-mini-form__submit-btn">
-          </div>
-        </div>
-
-        <!-- 3nd input -->
-        <div class="c-mini-form__input-wrap">
-          <div class="c-mini-form__input-inner">
-            <input type="text" name="last-nm" placeholder="City" class="c-mini-form__input">
+            <input type="text" name="first-nm" placeholder="First Name" class="c-mini-form__input" required>
             <button type="button" class="c-mini-form__btn--next">
               <i class="material-icons">arrow_forward</i>
             </button>
@@ -45,22 +36,36 @@
         <!-- 2nd input -->
         <div class="c-mini-form__input-wrap">
           <div class="c-mini-form__input-inner">
-            <input type="text" name="last-nm" placeholder="Last Name" class="c-mini-form__input">
+            <input type="text" name="last-nm" placeholder="Last Name" class="c-mini-form__input" required>
             <button type="button" class="c-mini-form__btn--next">
               <i class="material-icons">arrow_forward</i>
             </button>
           </div>
+          <span class="c-mini-form__btn--prev"></span>
         </div>
 
-        <!-- 1st input -->
-        <div class="c-mini-form__input-wrap c-mini-form--active">
+        <!-- 3rd input -->
+        <div class="c-mini-form__input-wrap">
           <div class="c-mini-form__input-inner">
-            <input type="text" name="first-nm" placeholder="First Name" class="c-mini-form__input">
+            <input type="email" name="email" placeholder="Email" class="c-mini-form__input" required>
             <button type="button" class="c-mini-form__btn--next">
               <i class="material-icons">arrow_forward</i>
             </button>
           </div>
+          <span class="c-mini-form__btn--prev"></span>
         </div>
+
+        <!-- Last input -->
+        <div class="c-mini-form__input-wrap c-mini-form__submit">
+          <div class="c-mini-form__input-inner">
+            <button type="button" class="c-mini-form__btn--back">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <input type="submit" name="submit" value="Subscribe" class="c-mini-form__submit-btn">
+          </div>
+          <span class="c-mini-form__btn--prev"></span>
+        </div>
+
 
       </form>
     </div>

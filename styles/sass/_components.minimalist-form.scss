@@ -2,71 +2,130 @@
    Minimalist Form component styles
    ========================================================================== */
 
-/* sub-elements styles
-   ========================================================================== */
-
+// General styles
 .c-mini-form {
   position: relative;
   font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $generic-white-color;
 
-  .c-mini-form__input-wrap {
-    position: absolute;
-    background-color: lighten($secondary-light-color, 5%);
-    width: 18em;
-    height: 3.3em;
-    padding: 0;
-    opacity: 0.7;
-    pointer-events: none;
-    box-shadow: 0 0 0 3px rgb(255,255,255);
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-
-    &.c-mini-form--active {
-      pointer-events: auto;
-      opacity: 1;
-    }
-
-    &.c-mini-form--active > .c-mini-form__input-inner {
-      opacity: 1;
-    }
-  }
+  border: 1px solid black;
 
   input:focus,
   button:focus {
     outline: none;
   }
+
+  input[type='text']:valid,
+  input[type='email']:valid {
+
+  }
 }
 
+/* sub-elements styles
+   ========================================================================== */
+
+// outer wrap styles
+.c-mini-form__input-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $generic-white-color;
+  min-width: 0;
+  width: 0;
+  height: 3.3em;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border-right: 4px solid $secondary-light-color;
+  margin: 0;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+  transition: border-right-color 0.2s 0.5s;
+
+  &:first-of-type {
+    border: 0;
+    width: 19em;
+  }
+
+  &.is-active {
+    min-width: 19em;
+
+    > .c-mini-form__input-inner {
+      visibility: visible;
+    }
+
+    & + .c-mini-form__input-wrap {
+      border-right-color: $primary-light-color;
+    }
+  }
+
+  &.is-invalid + .c-mini-form__input-wrap{
+      border-right-color: #F36C75;
+  }
+
+  .c-mini-form__btn--prev {
+    display: inline-block;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    height: 3.3em;
+    width: 4px;
+    margin: 0;
+    background-color: $secondary-light-color;
+    cursor: pointer;
+    visibility: hidden;
+    transition: visibility 0s 0.5s, background-color 0.2s;
+
+    &:hover {
+      background-color: $primary-light-color;
+    }
+  }
+}
+
+// Inner wrap styles
 .c-mini-form__input-inner {
   position: relative;
-  margin: 0;
-  width: 100%;
+  margin-left: 0.5em;
+  width: 18em;
   height: 100%;
   display: flex;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 1;
+  overflow: hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+
+  background-color: lighten($secondary-light-color, 5%);
 
   .c-mini-form__input,
   .c-mini-form__submit-btn {
     height: 100%;
-    width: 14.8em;
+    width: 14.7em;
+    margin: 0;
   }
 
   .c-mini-form__input {
-    border: 1px solid darken($generic-gray-color, 2%);
-    border-right: none;
+    border: none;
     background-color: transparent;
     padding-left: 0.9em;
     padding-right: 0.9em;
-    color: $secondary-dark-color;
     color: lighten($generic-black-color, 30%);
+
+    &:hover {
+      cursor: text;
+    }
   }
 
-  [class^='c-mini-form__btn--'] {
+  .c-mini-form__btn--next,
+  .c-mini-form__btn--back {
     cursor: pointer;
     height: 100%;
+    margin: 0;
     width: 3.3em;
     color: $generic-white-color;
     background-color: $primary-color;
@@ -91,76 +150,50 @@
   }
 }
 
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0.3;
-
-  }
-  20% {
-    transform: perspective(500px) translateZ(20px);
-  }
-  80% {
-    opacity: 0.8;
-    transform: perspective(500px) translateZ(0px);
-  }
-  100% {
-    opacity: 1;
-    //transform: perspective(500px) translateZ(0px);
-  }
-}
-
-//@keyframes fadeOut {
-//  from {
-//    opacity: 1;
-//  }
-//  to {
-//    opacity: 0;
-//  }
-//}
-
-@keyframes moveToBack {
+@keyframes fadeOut {
   0% {
     opacity: 1;
-    transform: perspective(500px) translateZ(20px);
   }
-  40% {
-    opacity: 0.4;
-  }
-  50% {
-    //opacity: 0.5;
-    transform: perspective(500px) translateZ(0px);
+  70% {
+    visibility: visible;
+    opacity: 1;
   }
   100% {
-    opacity: 0.7;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
-//@keyframes top{ from, to{ z-index: 2; } }
-//
-//@keyframes moveout{
-//  0%{ transform:translateX(0px); }
-//  50%{ transform:translateX(-160px); }
-//  100%{
-//    transform: translateX(40px) translateY(-40px);
-//    z-index: 0;
-//  }
-//}
-//
-//@keyframes movein{
-//  0%{ transform:translateX(40px) translateY(-40px); }
-//  50%{ transform:translateX(160px); }
-//  100%{ transform:translateX(0px); }
-//}
-
-@keyframes backToFirst {
+@keyframes rollToRight {
   0% {
-
+    width: 0;
+    min-width: 0;
+  }
+  100% {
+    width: 19.5em;
+    min-width: 19em;
   }
 }
 
+@keyframes rollToLeft {
+  0% {
+    width: 19.5em;
+    min-width: 19em;
+  }
+  100% {
+    width: 0;
+    min-width: 0;
+  }
+}
 
-// FOR UI FRAMEWORK LAYOUT ONLY
-.o-grid__cell .c-mini-form {
-  height: 15em;
+@keyframes bgChange {
+  0% {
+    background-color: lighten($secondary-light-color, 10%);
+  }
+  60% {
+    background-color: lighten($secondary-light-color, 10%);
+  }
+  100% {
+    background-color: lighten($secondary-light-color, 5%);
+  }
 }

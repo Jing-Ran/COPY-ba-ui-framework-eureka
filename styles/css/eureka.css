@@ -3292,62 +3292,101 @@ button.c-sif__btn--next {
 /* ==========================================================================
    Minimalist Form component styles
    ========================================================================== */
-/* sub-elements styles
-   ========================================================================== */
 .c-mini-form {
   position: relative;
-  font-size: 1em; }
-  .c-mini-form .c-mini-form__input-wrap {
-    position: absolute;
-    background-color: #e4e4e4;
-    width: 18em;
-    height: 3.3em;
-    padding: 0;
-    opacity: 0.7;
-    pointer-events: none;
-    box-shadow: 0 0 0 3px white;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); }
-    .c-mini-form .c-mini-form__input-wrap.c-mini-form--active {
-      pointer-events: auto;
-      opacity: 1; }
-    .c-mini-form .c-mini-form__input-wrap.c-mini-form--active > .c-mini-form__input-inner {
-      opacity: 1; }
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 1px solid black; }
   .c-mini-form input:focus,
   .c-mini-form button:focus {
     outline: none; }
 
+/* sub-elements styles
+   ========================================================================== */
+.c-mini-form__input-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  min-width: 0;
+  width: 0;
+  height: 3.3em;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border-right: 4px solid #d7d7d7;
+  margin: 0;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: border-right-color 0.2s 0.5s; }
+  .c-mini-form__input-wrap:first-of-type {
+    border: 0;
+    width: 19em; }
+  .c-mini-form__input-wrap.is-active {
+    min-width: 19em; }
+    .c-mini-form__input-wrap.is-active > .c-mini-form__input-inner {
+      visibility: visible; }
+    .c-mini-form__input-wrap.is-active + .c-mini-form__input-wrap {
+      border-right-color: #a1deec; }
+  .c-mini-form__input-wrap.is-invalid + .c-mini-form__input-wrap {
+    border-right-color: #F36C75; }
+  .c-mini-form__input-wrap .c-mini-form__btn--prev {
+    display: inline-block;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    height: 3.3em;
+    width: 4px;
+    margin: 0;
+    background-color: #d7d7d7;
+    cursor: pointer;
+    visibility: hidden;
+    transition: visibility 0s 0.5s, background-color 0.2s; }
+    .c-mini-form__input-wrap .c-mini-form__btn--prev:hover {
+      background-color: #a1deec; }
+
 .c-mini-form__input-inner {
   position: relative;
-  margin: 0;
-  width: 100%;
+  margin-left: 0.5em;
+  width: 18em;
   height: 100%;
   display: flex;
   align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s; }
+  opacity: 1;
+  overflow: hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  background-color: #e4e4e4; }
   .c-mini-form__input-inner .c-mini-form__input,
   .c-mini-form__input-inner .c-mini-form__submit-btn {
     height: 100%;
-    width: 14.8em; }
+    width: 14.7em;
+    margin: 0; }
   .c-mini-form__input-inner .c-mini-form__input {
-    border: 1px solid #eeeeee;
-    border-right: none;
+    border: none;
     background-color: transparent;
     padding-left: 0.9em;
     padding-right: 0.9em;
-    color: #a4a4a4;
     color: #6e6e6e; }
-  .c-mini-form__input-inner [class^='c-mini-form__btn--'] {
+    .c-mini-form__input-inner .c-mini-form__input:hover {
+      cursor: text; }
+  .c-mini-form__input-inner .c-mini-form__btn--next,
+  .c-mini-form__input-inner .c-mini-form__btn--back {
     cursor: pointer;
     height: 100%;
+    margin: 0;
     width: 3.3em;
     color: #fff;
     background-color: #51d0ef;
     border: none;
     transition: background-color 0.2s; }
-    .c-mini-form__input-inner [class^='c-mini-form__btn--']:hover {
+    .c-mini-form__input-inner .c-mini-form__btn--next:hover,
+    .c-mini-form__input-inner .c-mini-form__btn--back:hover {
       background-color: #76daf2; }
   .c-mini-form__input-inner .c-mini-form__submit-btn {
     cursor: pointer;
@@ -3358,29 +3397,36 @@ button.c-sif__btn--next {
     .c-mini-form__input-inner .c-mini-form__submit-btn:hover {
       background-color: #62bcd1; }
 
-@keyframes fadeIn {
+@keyframes fadeOut {
   0% {
-    opacity: 0.3; }
-  20% {
-    transform: perspective(500px) translateZ(20px); }
-  80% {
-    opacity: 0.8;
-    transform: perspective(500px) translateZ(0px); }
+    opacity: 1; }
+  70% {
+    visibility: visible;
+    opacity: 1; }
   100% {
-    opacity: 1; } }
-@keyframes moveToBack {
+    visibility: hidden;
+    opacity: 0; } }
+@keyframes rollToRight {
   0% {
-    opacity: 1;
-    transform: perspective(500px) translateZ(20px); }
-  40% {
-    opacity: 0.4; }
-  50% {
-    transform: perspective(500px) translateZ(0px); }
+    width: 0;
+    min-width: 0; }
   100% {
-    opacity: 0.7; } }
-.o-grid__cell .c-mini-form {
-  height: 15em; }
-
+    width: 19.5em;
+    min-width: 19em; } }
+@keyframes rollToLeft {
+  0% {
+    width: 19.5em;
+    min-width: 19em; }
+  100% {
+    width: 0;
+    min-width: 0; } }
+@keyframes bgChange {
+  0% {
+    background-color: #f1f1f1; }
+  60% {
+    background-color: #f1f1f1; }
+  100% {
+    background-color: #e4e4e4; } }
 .eureka-footer {
   background-color: #30353b;
   padding: 2em; }
