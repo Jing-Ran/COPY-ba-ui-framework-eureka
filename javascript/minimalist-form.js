@@ -64,7 +64,7 @@
       inputWraps[currentCardIndex].querySelector('.c-mini-form__input-inner').style.animationName = '';
       window.setTimeout(function() {
         goBack(index);
-      }, 500);
+      }, 100);
     }
   }
 
