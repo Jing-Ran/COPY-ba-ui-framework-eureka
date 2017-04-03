@@ -3329,9 +3329,9 @@ button.c-sif__btn--next {
   height: 3.3em;
   margin: 0;
   padding: 0;
-  animation-duration: 1s;
+  animation-duration: 0.65s;
   animation-fill-mode: forwards;
-  transition: border-right-color 0.2s 0.8s; }
+  transition: border-right-color 0.2s 0.45s; }
   .c-mini-form__input-wrap:first-of-type {
     border: 0;
     width: 19em; }
@@ -3364,7 +3364,7 @@ button.c-sif__btn--next {
   justify-content: flex-start;
   opacity: 1;
   overflow: hidden;
-  animation-duration: 1s;
+  animation-duration: 0.65s;
   animation-fill-mode: forwards; }
   .c-mini-form__input-inner .c-mini-form__input,
   .c-mini-form__input-inner .c-mini-form__submit-btn {
@@ -3391,7 +3391,7 @@ button.c-sif__btn--next {
     .c-mini-form__input-inner .c-mini-form__btn--back:hover {
       background-color: #76daf2; }
   .c-mini-form__input-inner .c-mini-form__btn--next {
-    animation-duration: 1s;
+    animation-duration: 0.65s;
     animation-fill-mode: forwards; }
   .c-mini-form__input-inner .c-mini-form__submit-btn {
     cursor: pointer;

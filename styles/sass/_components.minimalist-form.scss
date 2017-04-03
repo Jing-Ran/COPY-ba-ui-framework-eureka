@@ -50,9 +50,9 @@
   margin: 0;
   padding: 0;
 
-  animation-duration: 1s;
+  animation-duration: 0.65s;
   animation-fill-mode: forwards;
-  transition: border-right-color 0.2s 0.8s;
+  transition: border-right-color 0.2s 0.45s;
 
   &:first-of-type {
     border: 0;
@@ -103,7 +103,7 @@
   justify-content: flex-start;
   opacity: 1;
   overflow: hidden;
-  animation-duration: 1s;
+  animation-duration: 0.65s;
   animation-fill-mode: forwards;
 
   .c-mini-form__input,
@@ -137,7 +137,7 @@
     }
   }
   .c-mini-form__btn--next {
-    animation-duration: 1s;
+    animation-duration: 0.65s;
     animation-fill-mode: forwards;
   }
 

@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/c5b9a6def2c6932fcd2913a3d48343d23a318a27/_components.minimalist-form.scssc" afterPath="$PROJECT_DIR$/.sass-cache/c5b9a6def2c6932fcd2913a3d48343d23a318a27/_components.minimalist-form.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/minimalist-form.js" afterPath="$PROJECT_DIR$/javascript/minimalist-form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jr-components/minimalist-form.html" afterPath="$PROJECT_DIR$/jr-components/minimalist-form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/css/eureka.css" afterPath="$PROJECT_DIR$/styles/css/eureka.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/css/eureka.css.map" afterPath="$PROJECT_DIR$/styles/css/eureka.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss" afterPath="$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss" />
@@ -33,7 +32,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.47434998">
       <split-first>
         <leaf>
-          <file leaf-file-name="minimalist-form.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="minimalist-form.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/jr-components/minimalist-form.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="372">
@@ -43,11 +42,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_components.minimalist-form.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="_components.minimalist-form.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3485">
-                  <caret line="200" column="47" lean-forward="true" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
+                <state relative-caret-position="432">
+                  <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -60,8 +59,8 @@
           <file leaf-file-name="minimalist-form.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascript/minimalist-form.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+                <state relative-caret-position="560">
+                  <caret line="87" column="104" lean-forward="false" selection-start-line="87" selection-start-column="104" selection-end-line="87" selection-end-column="104" />
                   <folding />
                 </state>
               </provider>
@@ -102,9 +101,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/javascript/chips.js" />
-        <option value="$PROJECT_DIR$/javascript/minimalist-form.js" />
-        <option value="$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss" />
         <option value="$PROJECT_DIR$/jr-components/minimalist-form.html" />
+        <option value="$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss" />
+        <option value="$PROJECT_DIR$/javascript/minimalist-form.js" />
       </list>
     </option>
   </component>
@@ -115,8 +114,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1846" />
-    <option name="y" value="75" />
+    <option name="x" value="2037" />
+    <option name="y" value="70" />
     <option name="width" value="1445" />
     <option name="height" value="872" />
   </component>
@@ -350,10 +349,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84966000" />
+    <option name="totallyTimeSpent" value="86222000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1846" y="75" width="1445" height="872" extended-state="0" />
+    <frame x="2037" y="70" width="1445" height="872" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496474" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -507,26 +506,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/minimalist-form.js">
+    <entry file="file://$PROJECT_DIR$/jr-components/minimalist-form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        <state relative-caret-position="372">
+          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/sass/_components.minimalist-form.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3485">
-          <caret line="200" column="47" lean-forward="true" selection-start-line="200" selection-start-column="47" selection-end-line="200" selection-end-column="47" />
+        <state relative-caret-position="432">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jr-components/minimalist-form.html">
+    <entry file="file://$PROJECT_DIR$/javascript/minimalist-form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="53" column="16" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        <state relative-caret-position="560">
+          <caret line="87" column="104" lean-forward="false" selection-start-line="87" selection-start-column="104" selection-end-line="87" selection-end-column="104" />
           <folding />
         </state>
       </provider>

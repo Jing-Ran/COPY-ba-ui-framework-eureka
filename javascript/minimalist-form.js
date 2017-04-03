@@ -57,7 +57,7 @@
         // next card fades in
         fadeIn(inputWraps[index + 1]);
         prevBtns[index].style.visibility = 'visible';
-        prevBtns[index].style.transitionDelay = '1s, 0s';
+        prevBtns[index].style.transitionDelay = '0.65s, 0s';
 
         // update currentCardIndex with the next card's index
         currentCardIndex = index + 1;
@@ -89,7 +89,7 @@
 
       window.setTimeout(function() {
         goBack(index);
-      }, 250);
+      }, 200);
     }
   }
 
