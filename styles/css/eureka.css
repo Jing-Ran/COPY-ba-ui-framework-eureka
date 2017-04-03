@@ -3302,41 +3302,9 @@ button.c-sif__btn--next {
   .c-mini-form input:focus,
   .c-mini-form button:focus {
     outline: none; }
-
-/* sub-elements styles
-   ========================================================================== */
-.c-mini-form__input-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  min-width: 0;
-  width: 0;
-  height: 3.3em;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  border-right: 4px solid #d7d7d7;
-  margin: 0;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: border-right-color 0.2s 0.5s; }
-  .c-mini-form__input-wrap:first-of-type {
-    border: 0;
-    width: 19em; }
-  .c-mini-form__input-wrap.is-active {
-    min-width: 19em; }
-    .c-mini-form__input-wrap.is-active > .c-mini-form__input-inner {
-      visibility: visible; }
-    .c-mini-form__input-wrap.is-active + .c-mini-form__input-wrap {
-      border-right-color: #a1deec; }
-  .c-mini-form__input-wrap.is-invalid + .c-mini-form__input-wrap {
-    border-right-color: #F36C75; }
-  .c-mini-form__input-wrap .c-mini-form__btn--prev {
-    display: inline-block;
+  .c-mini-form .c-mini-form__btn--prev {
+    display: block;
     position: absolute;
-    right: -4px;
     top: 0;
     height: 3.3em;
     width: 4px;
@@ -3344,41 +3312,76 @@ button.c-sif__btn--next {
     background-color: #d7d7d7;
     cursor: pointer;
     visibility: hidden;
-    transition: visibility 0s 0.5s, background-color 0.2s; }
-    .c-mini-form__input-wrap .c-mini-form__btn--prev:hover {
+    transition: visibility 0s, background-color 0.2s; }
+    .c-mini-form .c-mini-form__btn--prev:hover {
       background-color: #a1deec; }
 
+/* sub-elements styles
+   ========================================================================== */
+.c-mini-form__input-wrap {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border-right: 4px solid #d7d7d7;
+  min-width: 0;
+  width: 0;
+  height: 3.3em;
+  margin: 0;
+  padding: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: border-right-color 0.2s 0.8s; }
+  .c-mini-form__input-wrap:first-of-type {
+    border: 0;
+    width: 19em; }
+  .c-mini-form__input-wrap.is-active {
+    min-width: 19em; }
+    .c-mini-form__input-wrap.is-active ~ .c-mini-form__input-wrap {
+      transition: border-right-color 0.2s;
+      border-right-color: #a1deec; }
+    .c-mini-form__input-wrap.is-active ~ .c-mini-form__input-wrap ~ .c-mini-form__input-wrap {
+      transition: border-right-color 0.2s;
+      border-right-color: #d7d7d7; }
+  .c-mini-form__input-wrap.is-invalid ~ .c-mini-form__input-wrap {
+    border-right-color: #F36C75; }
+  .c-mini-form__input-wrap.is-invalid ~ .c-mini-form__input-wrap ~ .c-mini-form__input-wrap {
+    border-right-color: #d7d7d7; }
+  .c-mini-form__input-wrap.c-mini-form__submit > .c-mini-form__input-inner {
+    background-color: #42aec8;
+    color: #fff;
+    display: flex;
+    justify-content: center; }
+
 .c-mini-form__input-inner {
-  position: relative;
-  margin-left: 0.5em;
+  position: absolute;
+  left: 0.5em;
   width: 18em;
   height: 100%;
+  background-color: #e4e4e4;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   opacity: 1;
   overflow: hidden;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  background-color: #e4e4e4; }
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
   .c-mini-form__input-inner .c-mini-form__input,
   .c-mini-form__input-inner .c-mini-form__submit-btn {
     height: 100%;
     width: 14.7em;
-    margin: 0; }
+    margin: 0;
+    border: none; }
   .c-mini-form__input-inner .c-mini-form__input {
-    border: none;
     background-color: transparent;
     padding-left: 0.9em;
     padding-right: 0.9em;
     color: #6e6e6e; }
-    .c-mini-form__input-inner .c-mini-form__input:hover {
-      cursor: text; }
   .c-mini-form__input-inner .c-mini-form__btn--next,
   .c-mini-form__input-inner .c-mini-form__btn--back {
     cursor: pointer;
     height: 100%;
-    margin: 0;
+    margin-left: 0;
     width: 3.3em;
     color: #fff;
     background-color: #51d0ef;
@@ -3387,9 +3390,11 @@ button.c-sif__btn--next {
     .c-mini-form__input-inner .c-mini-form__btn--next:hover,
     .c-mini-form__input-inner .c-mini-form__btn--back:hover {
       background-color: #76daf2; }
+  .c-mini-form__input-inner .c-mini-form__btn--next {
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
   .c-mini-form__input-inner .c-mini-form__submit-btn {
     cursor: pointer;
-    border: none;
     color: #fff;
     background-color: #42aec8;
     transition: background-color 0.2s; }
@@ -3399,19 +3404,19 @@ button.c-sif__btn--next {
 @keyframes fadeOut {
   0% {
     opacity: 1; }
-  70% {
-    visibility: visible;
-    opacity: 1; }
+  85% {
+    opacity: 1;
+    visibility: hidden; }
   100% {
     visibility: hidden;
     opacity: 0; } }
-@keyframes rollToRight {
+@keyframes expandToRight {
   0% {
     width: 0;
     min-width: 0; }
   100% {
     width: 19.5em;
-    min-width: 19em; } }
+    min-width: 19.5em; } }
 @keyframes rollToLeft {
   0% {
     width: 19.5em;
@@ -3422,7 +3427,7 @@ button.c-sif__btn--next {
 @keyframes bgChange {
   0% {
     background-color: #f1f1f1; }
-  60% {
+  75% {
     background-color: #f1f1f1; }
   100% {
     background-color: #e4e4e4; } }

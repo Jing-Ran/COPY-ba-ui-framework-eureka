@@ -15,6 +15,23 @@
   button:focus {
     outline: none;
   }
+
+  .c-mini-form__btn--prev {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 3.3em;
+    width: 4px;
+    margin: 0;
+    background-color: $secondary-light-color;
+    cursor: pointer;
+    visibility: hidden;
+    transition: visibility 0s, background-color 0.2s;
+
+    &:hover {
+      background-color: $primary-light-color;
+    }
+  }
 }
 
 /* sub-elements styles
@@ -24,20 +41,18 @@
 .c-mini-form__input-wrap {
   position: absolute;
   top: 0;
-  left: 0;
+  overflow: hidden;
   background-color: $generic-white-color;
+  border-right: 4px solid $secondary-light-color;
   min-width: 0;
   width: 0;
   height: 3.3em;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  border-right: 4px solid $secondary-light-color;
   margin: 0;
-  animation-duration: 0.5s;
+  padding: 0;
+
+  animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  transition: border-right-color 0.2s 0.5s;
+  transition: border-right-color 0.2s 0.8s;
 
   &:first-of-type {
     border: 0;
@@ -47,78 +62,70 @@
   &.is-active {
     min-width: 19em;
 
-    > .c-mini-form__input-inner {
-      visibility: visible;
-    }
-
-    & + .c-mini-form__input-wrap {
+    // Valid border color of the first card after the active card
+    & ~ .c-mini-form__input-wrap {
+      transition: border-right-color 0.2s;
       border-right-color: $primary-light-color;
     }
-  }
 
-  &.is-invalid + .c-mini-form__input-wrap{
-      border-right-color: #F36C75;
-  }
-
-  .c-mini-form__btn--prev {
-    display: inline-block;
-    position: absolute;
-    right: -4px;
-    top: 0;
-    height: 3.3em;
-    width: 4px;
-    margin: 0;
-    background-color: $secondary-light-color;
-    cursor: pointer;
-    visibility: hidden;
-    transition: visibility 0s 0.5s, background-color 0.2s;
-
-    &:hover {
-      background-color: $primary-light-color;
+    // Valid border color of the rest cards after the active card
+    & ~ .c-mini-form__input-wrap ~ .c-mini-form__input-wrap {
+      transition: border-right-color 0.2s;
+      border-right-color: $secondary-light-color;
     }
+  }
+  // Invalid border color
+  &.is-invalid ~ .c-mini-form__input-wrap {
+    border-right-color: #F36C75;
+  }
+  // Valid border color
+  &.is-invalid ~ .c-mini-form__input-wrap ~ .c-mini-form__input-wrap {
+    border-right-color: $secondary-light-color;
+  }
+
+  &.c-mini-form__submit > .c-mini-form__input-inner {
+    background-color: $primary-dark-color;
+    color: $generic-white-color;
+    display: flex;
+    justify-content: center;
   }
 }
 
 // Inner wrap styles
 .c-mini-form__input-inner {
-  position: relative;
-  margin-left: 0.5em;
+  position: absolute;
+  left: 0.5em;
   width: 18em;
   height: 100%;
+  background-color: lighten($secondary-light-color, 5%);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   opacity: 1;
   overflow: hidden;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-
-  background-color: lighten($secondary-light-color, 5%);
 
   .c-mini-form__input,
   .c-mini-form__submit-btn {
     height: 100%;
     width: 14.7em;
     margin: 0;
+    border: none;
   }
 
   .c-mini-form__input {
-    border: none;
     background-color: transparent;
     padding-left: 0.9em;
     padding-right: 0.9em;
     color: lighten($generic-black-color, 30%);
-
-    &:hover {
-      cursor: text;
-    }
   }
 
   .c-mini-form__btn--next,
   .c-mini-form__btn--back {
     cursor: pointer;
     height: 100%;
-    margin: 0;
+    margin-left: 0;
     width: 3.3em;
     color: $generic-white-color;
     background-color: $primary-color;
@@ -129,10 +136,13 @@
       background-color: lighten($primary-color, 8%);
     }
   }
+  .c-mini-form__btn--next {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
 
   .c-mini-form__submit-btn {
     cursor: pointer;
-    border: none;
     color: $generic-white-color;
     background-color: $primary-dark-color;
     transition: background-color 0.2s;
@@ -143,13 +153,14 @@
   }
 }
 
+// Animations
 @keyframes fadeOut {
   0% {
     opacity: 1;
   }
-  70% {
-    visibility: visible;
+  85% {
     opacity: 1;
+    visibility: hidden;
   }
   100% {
     visibility: hidden;
@@ -157,14 +168,14 @@
   }
 }
 
-@keyframes rollToRight {
+@keyframes expandToRight {
   0% {
     width: 0;
     min-width: 0;
   }
   100% {
     width: 19.5em;
-    min-width: 19em;
+    min-width: 19.5em;
   }
 }
 
@@ -183,7 +194,7 @@
   0% {
     background-color: lighten($secondary-light-color, 10%);
   }
-  60% {
+  75% {
     background-color: lighten($secondary-light-color, 10%);
   }
   100% {
